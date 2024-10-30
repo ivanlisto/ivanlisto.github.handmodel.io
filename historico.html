@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by Ivan
+-->
+<html lang="pt-br">
+
+<head>
+	<title>HAND Model</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1><a href="index.html">HOME</a></h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<div id="menu">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="modelo.html"> O Modelo HAND</a></li>
+								<li><a href="historico.html">Histórico e Créditos</a></li>
+								<li><a href="projetos.html">Projetos</a></li>
+								<li><a href="public.html">Publicações</a></li>
+								<li><a href="instituicoes.html">Instituições</a></li>
+								<li><a href="outros.html">Outras Referencias</a></li>
+								<li><a href="contatos.html">Contatos</a></li>
+								<li><a href="faq.html">Perguntas Frequentes</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<article id="main">
+			<header>
+				<h2>Histórico e Créditos</h2>
+				<p>Breve histórico sobre o desenvolvimento do modelo HAND</p>
+			</header>
+			<section class="wrapper style5">
+				<div class="inner">
+					<section>
+						<h4>Uma narrativa contextualizadora</h4><br>
+						<p><i>por Antonio Donato Nobre</i></p>
+						<p align="justify">De 1999 a 2002, nossa equipe de pesquisadores do Projeto LBA instalou na
+							Amazônia a primeira
+							bacia hidrográfica instrumentada em floresta não perturbada, no Igarapé Asu, próximo a
+							Manaus
+							(descrita em Waterloo et al 2006 e Cuartas et al 2007). Alguns anos após a instalação,
+							enfrentamos o desafio de representar as propriedades do solo e inferir a dinâmica da água do
+							solo a partir apenas dos dados pontuais gerados pelos instrumentos de monitoramento. Os
+							dados
+							dispersos precisavam ser interpolados e extrapolados de forma significativa para uma grande
+							área, de difícil acesso. O uso de técnicas passivas de imageamento bidimensional da
+							superfície
+							para estimar a possível distribuição das propriedades do solo era limitado pela
+							impenetrabilidade do dossel florestal. No entanto, naquela época missões de sensoriamento
+							orbital por radar geraram modelos de elevação da superfície (maquetes digitais em 3D,
+							JERS-1,
+							SRTM). Começamos então a buscar uma solução inovadora para mapear solos que pudesse conjugar
+							inferência hidrológica com os dados topográficos a partir de então disponíveis.<br>
+							Ao descrever a paisagem amazônica, muitos pesquisadores usam rotineiramente classificações
+							qualitativas de terrenos, de acordo com o regime de saturação de água e a posição no relevo
+							local (por exemplo, Sioli 1984, Chauvel et al, 1987). Para a Hileia amazônica (ampla
+							extensão
+							da bacia situada abaixo dos 600 m de altitude acima do nível do mar), era bastante comum
+							usar
+							os termos geomorfológicos / fisionômicos (ou fisiográficos), como – baixio, -encosta e
+							-platô.
+							Tal classificação pode ser tomada por seu valor prático, com base em propriedades locais
+							percebidas dos terrenos, como uma descrição semântica de compartimentos da paisagem.
+							No entanto, essa forma coloquial de se referir a classes de terrenos ostenta pouca ou
+							nenhuma
+							dimensão quantitativa. Sua capacidade preditiva ficava limitada pela dificuldade de fazer
+							qualquer associação física significativa e reproduzível com a topografia (definida em
+							relação
+							ao nível do mar). Consideremos um exemplo sul-americano: um pântano pode ocorrer em qualquer
+							altitude, perto da foz do rio Amazonas – quase ao nível do mar -, até nas margens do Lago
+							Titicaca nos Andes, a 4000 m de altura. É claro, então, que a altura acima do nível do mar
+							mescla e confunde os gradientes de encostas locais com gradientes para toda a paisagem, na
+							escala continental.<br>
+							Precisávamos isolar logicamente os ambientes locais e colocá-los em uma estrutura
+							topográfica comparável. Essa foi minha visão que nos motivou a buscar o desenvolvimento de
+							um novo modelo normalizado de terreno. A ideia era muito simples, não obstante parecia que
+							ninguém havia visto isso antes. Alguns anos mais tarde, no âmbito do projeto de modelagem
+							GEOMA, liderei um esforço para construir uma ferramenta computacional que poderia normalizar
+							DEMs assim como havia imaginado, de modo que gradientes locais pudessem tornar-se
+							fisicamente
+							comparáveis ​​para áreas maiores. O desenvolvimento conceitual da classificação da paisagem
+							em
+							classes de terreno hidrologicamente relevantes (descritas em Nobre et al., 2011) precedeu o
+							algoritmo HAND e, de fato, orientou seu desenvolvimento. Tínhamos no grupo alguma
+							incredulidade
+							de que tal normalização topográfica ainda não houvesse sido feita, então reviramos a (vasta)
+							literatura sobre topografia-hidrologia, apenas para confirmar a inexistência de algo similar
+							ao HAND.<br>
+							Confiantes na originalidade da ideia, por volta de 2005 realizamos os primeiros testes
+							promissores para a bacia do Igarapé Asu. De posse do protótipo de ferramenta de
+							normalização,
+							voltamos para as classes de terreno verificadas em campo. Para testar a capacidade
+							quantitativa
+							da nova classificação normalizada de terreno realizamos uma análise dos dados de
+							distribuição
+							da água no solo. Com base na alocação de classes de profundidade do lençol freático,
+							identificamos as contrastantes categorias de terrenos e as chamamos de -baixio (waterlogged,
+							lençol superficial), ecótono (ecotone, lençol raso), encosta & platô (slope & plateau,
+							lençol
+							profundo). A classificação HAND da paisagem foi inicialmente pensada para resolver uma
+							interpolação em uma pequena bacia hidrográfica (13 km2). À medida que a aplicamos com
+							sucesso
+							para áreas circundantes, próximas e distantes do Igarapé Asu, concluímos que tínhamos nos
+							deparado com uma robusta propriedade física da paisagem: a antes esquiva coerência
+							topográfica
+							da água no solo, agora correlacionada a uma nova dimensão física do terreno, a topologia
+							normalizada HAND.<br>
+							Em Nobre et al (2011) introduzimos formalmente o modelo de terreno HAND, que captura com
+							substância física a relação topográfica entre solo e água, demonstrando-o com ampla
+							validação.
+							A classificação de terrenos baseada no modelo HAND foi aplicada e verificada na bacia do
+							Igarapé Asu, com resultados robustos também para duas áreas envolventes, o rio Cuieiras
+							(500 km2) e a parte inferior da bacia do Rio Negro (18.000 km2). Depois deste
+							desenvolvimento
+							inicial na Amazônia central, aplicamos e verificamos a classificação HAND para áreas
+							heterogêneas ainda maiores dispersas pelo Brasil (totalizando mais de 300 mil km2,
+							Nobre et al. 2011b). A classificação HAND também foi validada de forma independente para
+							diferentes geomorfologias, com resultados igualmente robustos. Com Nobre et (2011)
+							apresentamos os fundamentos físicos do modelo HAND e uma nova classificação quantitativa da
+							paisagem. Tal classificação tornou-se uma referência muito informativa e útil, cujas classes
+							têm reconhecida relevância global. Ao longo dos 10 anos de desenvolvimento inicial
+							(2001 a 2011) logramos demonstrar que a antiga classificação semântica, baseada em
+							percepções
+							intuitivas do regime de água subterrânea e posição relativa no relevo, pode finalmente
+							adquirir capacidade quantitativa e preditiva através do modelo HAND. A normalização do
+							relevo
+							via topologia HAND, e a classificação dos terrenos derivada dela, permitiram um olhar
+							hidrológico inteiramente novo e revolucionário sobre a paisagem.</p>
+						<hr />
+						<header>
+							<h4>Referencias</h4>
+						</header>
+						<p align="justify"><b>Chauvel, A., Lucas, Y., and Boulet, R., 1987</b> On the genesis of the
+							soil
+							mantle of the region of Manaus, Central Amazonia, Brazil. Experientia 43, 234-240.<br>
+							<b>Cuartas, L. A., Tomasella, J., Nobre, A. D., Hodnett, M. G., Waterloo, M. J., Múnera, J.
+								C., 2007.</b>
+							Interception water-partitioning dynamics for a pristine rainforest in Central Amazonia:
+							marked differences
+							between normal and dry years. Agricultural and Forest Meteorology 145 (1–2), 69–83.<br>
+							<b>Nobre, A. D., Cuartas, L. A., Hodnett, M. et al 2011a.</b> Height Above the Nearest
+							Drainage – a
+							hydrologically relevant new terrain model. Journal of Hydrology 404, 13–29.<br>
+							<b>Nobre, A. D.; Silveira, A … Cuartas, L.A., 2011b.</b> Aspectos físicos e geográficos das
+							áreas ripárias
+							no Brasil: análise preliminar da legislação. Ciência para o Código Florestal. São José dos
+							Campos: Centro de
+							Ciência para o Sistema Terrestre – INPE, 110 p. Relatório Cientifico.<br>
+							<b>Sioli, H., 1984.</b> The Amazon: limnology and landscape ecology of a mighty tropical
+							river and its basin.
+							W. Junk, 763 p.<br>
+							<b>Waterloo, M. J., Oliveira, S. M., Drucker, D. P., Nobre, A. D., Cuartas, L. A., Hodnett,
+								M. G., Wilma,
+								I. L., Jans, W. P., Tomasella, J., Araujo, A. C., Pimentel, T. P., Munera Estrada, J.
+								C., 2006.</b>
+							Export of organic carbon in run-off from an Amazonian rainforest black water catchment.
+							Hydrological
+							Processes 20, 2581–2597.
+						</p>
+					</section>
+				</div>
+			</section>
+
+			<!-- ======= Footer ======= -->
+			<footer id="footer">
+				<div class="container">
+					<h3>HANDMODEL</h3>
+					<p>Height Above the Nearest Drainage - Altura acima da Drenagem mais Próximo</p>
+					<div class="row">
+						<aside id="media_image-18" class="widget col-sm-6 clearfix widget_media_image">
+							<a href="https://www.cemaden.gov.br/">
+								<img width="260" height="75"
+									src="https://handmodel.ccst.inpe.br/wp-content/uploads/2019/05/logo12018-300x75.png"
+									class="image wp-image-1280  attachment-medium size-medium" alt=""
+									style="max-width: 100%; height: auto;" decoding="async" loading="lazy"></a>
+						</aside>
+						<aside id="media_image-20" class="widget col-sm-6 clearfix widget_media_image">
+							<a href="http://www.inpe.br/">
+								<img width="280" height="101"
+									src="https://handmodel.ccst.inpe.br/wp-content/uploads/2019/05/inpe_name.png"
+									class="image wp-image-1286  attachment-full size-full" alt=""
+									style="max-width: 100%; height: auto;" decoding="async" loading="lazy" srcset="https://handmodel.ccst.inpe.br/wp-content/uploads/2019/05/inpe_name.png 460w, 
+									https://handmodel.ccst.inpe.br/wp-content/uploads/2019/05/inpe_name-300x66.png 300w"
+									sizes="(max-width: 460px) 100vw, 460px"></a>
+						</aside>
+					</div>
+					<div class="copyright">
+						&copy; Copyright 2024 - <strong><span>HANDMODEL / CEMADEN/MCTI</span></strong>. Todos os
+						direitos reservados.
+					</div>
+					<div class="credits">
+						Designed Adapt by <a href="mailto:ivan.listo@cemaden.gov.br">Ivan Listo</a>
+					</div>
+				</div>
+			</footer>
+			<!-- End Footer -->
+			<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+				<i class="bi bi-arrow-up-short"></i></a>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
